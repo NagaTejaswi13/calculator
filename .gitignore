@@ -1,0 +1,41 @@
+# Ignore virtual environment folders
+venv/
+myvenv/
+
+# Ignore Python cache files and folders
+__pycache__/
+*.py[cod]
+
+# Ignore Django secret key files (if any)
+*.env
+
+# Ignore database files
+*.sqlite3
+
+# Ignore IDE files (optional)
+.vscode/
+.idea/
+
+# Ignore logs
+*.log
+
+# Ignore bytecode
+*.pyc
+
+# Ignore static files generated during build
+staticfiles/
+
+# Ignore coverage reports
+.coverage
+htmlcov/
+coverage.xml
+
+# Ignore migrations (optional, if you don’t want to track them)
+*/migrations/*.pyc
+*/migrations/__pycache__/
+
+# Ignore node_modules (if using npm or yarn for frontend)
+node_modules/
+
+
+ 

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>basic_calci</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <header>
+            <h1>Basic Calculator</h1>
+        </header>
+        <main>
+            <div style="margin-bottom: 20px;">
+            <form method="POST" action="/basic_calci/">
+                {% csrf_token %}
+                <table border="1" align="left" cellpadding="6">
+                    <!-- Display Row -->
+                    <tr>
+                        <td colspan="20">
+                            <input type="text" name="display" value="{{ display }}" readonly style="width: 100%; height: 40px; text-align: right;">
+                        </td>
+                    </tr>
+        
+                    <!-- Button Rows -->
+                    <tr>
+                        <td><button type="submit" name="button" value="7">7</button></td>
+                        <td><button type="submit" name="button" value="8">8</button></td>
+                        <td><button type="submit" name="button" value="9">9</button></td>
+                        <td><button type="submit" name="button" value="+">+</button></td>
+                    </tr>
+                    <tr>
+                        <td><button type="submit" name="button" value="4">4</button></td>
+                        <td><button type="submit" name="button" value="5">5</button></td>
+                        <td><button type="submit" name="button" value="6">6</button></td>
+                        <td><button type="submit" name="button" value="-">-</button></td>
+                    </tr>
+                    <tr>
+                        <td><button type="submit" name="button" value="1">1</button></td>
+                        <td><button type="submit" name="button" value="2">2</button></td>
+                        <td><button type="submit" name="button" value="3">3</button></td>
+                        <td><button type="submit" name="button" value="*">×</button></td>
+                    </tr>
+                    <tr>
+                        <td><button type="submit" name="button" value="0">0</button></td>
+                        <td><button type="submit" name="button" value=".">.</button></td>
+                        <td><button type="submit" name="button" value="=">=</button></td>
+                        <td><button type="submit" name="button" value="c">C</button></td>
+                        
+                    </tr>
+                </table>
+            </form>
+            </div>
+                
+            <div style="clear: both; margin-bottom: 20px;">
+                <a href = "{% url "index" %}">home</a>
+            </div>
+            
+        </main>
+
+       <footer>
+            <p>contact me at </p>
+            <a href = "teja2000.thotapalli@gmail.com" target = "_main">teja2000.thotapalli@gmail.com</a>
+       </footer>
+       
+       <script src="" async defer></script>
+
+    </body>
+</html>
