@@ -1,4 +1,4 @@
-### 1. Basic Calculator
+### Basic Calculator
 **Description**: My first-ever Django project, a basic calculator, allows users to perform simple arithmetic operations (addition, subtraction, multiplication, division). It is designed with a functional UI, and I learned a lot about Django views, templates, and form handling while creating this.
 
 **Features**:
