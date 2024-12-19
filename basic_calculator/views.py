@@ -33,7 +33,7 @@ def calc(operator, operand1, operand2 = None):
     elif(operator == '/' or operator == "div"):
         try:
             res = operand1/operand2
-            return "{0:.1f}".format(res)
+            return round(res, 2)
         except ZeroDivisionError as err:
             return "Division by zero"
     elif(operator == '%' or operator == "mod"):
@@ -63,17 +63,23 @@ def eval(expression_list):
         except Exception as err:
             return err.__str__()
 
+LEVEL_TWO_OPERATORS = ['+', '-', 'add', 'sub']
+LEVEL_ONE_OPERATORS = ['*', '/', '%', 'mul', 'div', 'mod']
 def struct(unformatted_list):
-    new_list = list()
-    for i in range(len(unformatted_list)):
-        if len(new_list) == 3:
-            new_list = [new_list]
-        if unformatted_list[i] in ('+', '-', "add", "sub"):
-            new_list.insert(0, unformatted_list[i])
-        else:
-            new_list.append(unformatted_list[i])
-
-    return eval(new_list)
+    operators_groups = [LEVEL_ONE_OPERATORS, LEVEL_TWO_OPERATORS]  
+    for operators in operators_groups:
+        i = 0
+        while i < len(unformatted_list):
+            if unformatted_list[i] in operators:
+                if len(unformatted_list) == 3:
+                    return eval([unformatted_list[i], unformatted_list[i-1], unformatted_list[i+1]])
+                temp = unformatted_list[:i-1]
+                temp.append([unformatted_list[i], unformatted_list[i-1], unformatted_list[i+1]])
+                temp = temp + unformatted_list[i+2:]
+                unformatted_list = temp
+            else:
+                i +=1
+    return eval(unformatted_list)
 
 def basic_calci(request):
     
